@@ -1,0 +1,64 @@
+-> SysV
+    -> runlevel (file inittab):
+        -> 0
+            (shutdown)
+        -> 1
+            (single user mode)
+        -> 2
+            Multiuser, without NFS(default Debian/Ubuntu)
+        -> 3
+            Full multiuser mod (text mode default Redhat/Suse)
+        -> 4
+            Unused (WildCard, progging mode can setup what we want)
+        -> 5
+            X11 (RedHat/Suse - GUI)
+        -> 6
+            (reboot)
+
+-> Systemd
+    -> Unit:
+        (moduls operated by systemd)
+        -> .service
+            (services)
+        -> .mount
+            (mounted point)
+        -> .device
+            (devices)
+        -> .socket
+            (sockets)
+
+    -> Unit directories:
+        -> /usr/lib/systemd
+            (base unit directory)
+        -> /etc/systemd
+            (directory of controlling units)
+
+     -> Utils:
+        -> systemctl
+            (util controlled )
+
+    -> Targets:
+        -> poweroff.target ( runlevel : 0 )
+            (shutdown)
+        -> rescue.target ( runlevel : 1 )
+            (single user mode)
+        -> multi-user.target ( runlevel : 2,4 )
+            Multiuser, without NFS(default Debian/Ubuntu)
+        -> multi-user.target ( runlevel : 3 )
+            Full multiuser mod (text mode default Redhat/Suse)
+        -> graphical.target ( runlevel : 5 )
+            (GUI)
+        -> reboot.target ( runlevel : 6 )
+            (reboot)
+
+    -> Journal, control services and power:
+        -> Journald
+            (journal service)
+        -> Control service
+            ( Systemctl start/stop/reload/restart/status {unit} )
+        -> Power:
+            ( Systemctl reboot/poweroff/suspend/hibernate/hybrid-sleep )
+
+https://habr.com/ru/sandbox/112588/
+
+

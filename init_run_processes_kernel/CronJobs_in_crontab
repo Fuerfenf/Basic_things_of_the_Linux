@@ -1,0 +1,22 @@
+-> cronJobs:
+    -> crontab -e
+    -> format crontab:
+        * * * * * command
+        | | | | |
+        | | | | +----- Day of week (range: 1-7)
+        | | | +------- Month     (range: 1-12)
+        | | +--------- Day of month (range: 1-31)
+        | +----------- Hour       (range: 0-23)
+        +------------- Min     (range: 0-59)
+
+        -> command can be diff:
+            -> example: echo "hello" >> /home/user/logfile
+
+        -> example full line: 50 12 * * * echo "hello" >> /home/user/logfile
+        -> every 2 minute: */2 * * * * echo "hello" >> /home/user/logfile
+
+        -> add script to auto run:
+            -> example:  */2 * * * * { path to script }
+
+-> main system table: /etc/crontab:
+    -> same as in crontab -e but add user pattern: * * * * * user command

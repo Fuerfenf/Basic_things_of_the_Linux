@@ -1,0 +1,17 @@
+-> ext
+    https://rtfm.co.ua/linux-fajlovye-sistemy-kratkij-obzor-i-sravnenie/
+    https://modx.cc/linux/fajlovaya-sistema-ext-(ext2,-ext3,-ext4)/
+    -> m2kefs
+    -> mkfs
+        ( more info in file disc_folder_file_managment)
+    -> e2fsck
+        -> fsck
+    -> dumpe2fs
+        ( display information about ext2, ext3 and ext4 filesystems )
+        https://landoflinux.com/linux_dumpe2fs_command.html
+    -> tune2fs
+        https://nagg.ru/2016/03/utilita-tune2fs-otklyuchaem-zarezervirovannoe-pod-root-prostranstvo/
+
+-> xfs
+    -> all about it
+        https://dimetrius.net/linux/proverka-xfs-fajlovoj-sistemy-iz-pod-linux.html

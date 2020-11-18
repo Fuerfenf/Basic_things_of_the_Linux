@@ -1,0 +1,36 @@
+-> /sys
+    (directory about connected devises, in this mount system sys.fs)
+    -> /devices/
+        - (all kernel devices)
+    -> /bus/
+        - (list of bus)
+    -> /drivers/
+        - (drivers catalogs)
+    -> /block/
+        - (catalog of blocks devices)
+    -> /class/
+        - (group deviaces by classes)
+
+-> /proc
+    (mount file system proc.fs, creates when PC start, all process, kernel)
+
+-> /dev
+    (all devices files)
+    -> /sd{literal}
+        - (HDD)
+    -> /sd{literal}{number}
+        - (hdd partition)
+    -> /sr{number}
+        - (CD-ROM)
+    -> /eth{number}
+        - (network interfaces)
+    -> /wlan
+        - (wlan interfaces)
+    -> /lp
+        - (printers)
+    -> /video
+        -(video cameras and other same devices)
+    -> /bus/usb/{number}/{number}/..
+        - (number device of usb bus)
+    -> /dsp
+        - (audio out)

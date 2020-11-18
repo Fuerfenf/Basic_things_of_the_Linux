@@ -1,0 +1,126 @@
+-> configure files:
+    -> /etc/network/interfaces
+        ( config for network interfaces )
+    -> /etc/resolve.conf
+        ( configure DNS client )
+    -> /etc/hostname
+        ( set host name )
+    -> /etc/hosts
+        ( conformity ip to host name ( come from DNS ) )
+
+    -> set network ( universal method ):
+        -> open in redactor: /etc/init.d/rc.local
+        -> add next lines:
+            -> ifconfig {interface} {ip}/{mask prefix} {up/down}
+            -> route add default gw {gateway}
+            -> echo "search any.com" > /etc/resolv.conf
+            -> echo "{nameserver} {gateway}" >> /etc/resolv.conf
+            -> hostname {name}
+-> utils
+    -> net-tools:
+        -> ifconfig
+            ( config network interfaces )
+            https://losst.ru/komanda-ifconfig-primery-ispolzovaniya
+            -> ifconfig {interface} {ip} {up/down}
+
+        -> route
+            ( set route table )
+            -> add
+                ( add route to table )
+                -> -net
+                -> -host
+                -> default
+            -> del
+            -> gw
+                ( set gateway )
+            -> examples:
+                -> route add -net {ip}/{mask prefix} gw {ip gw}
+                -> route add -host {ip host} gw {ip gw}
+                -> route add default gw {ip gw}
+
+    -> ip
+        -> ip addr show
+            ( analog ifconfig )
+        -> ip route show
+            ( analog route )
+
+    -> arp
+        ( table ip - mac )
+        -> a {hostname}
+            ( all values of table or only hostname lines )
+        -> d {hostname}
+            ( remove record )
+        -> s {hostname} {mac}
+            ( manual record add )
+
+    -> ping, traceroute, mtr
+        https://losst.ru/komanda-ping-v-linux
+        https://neoserver.ru/help/network-monitoring-linux-ping-traceroute-mtr
+        -> ping -c {1-n} {ip}
+            ( pinging ip for n times )
+        -> tracerout { ip }
+            ( list trace route to ip )
+
+    -> netcat
+        ( listen and write data from tcp/udp )
+        https://andreyex.ru/operacionnaya-sistema-linux/komanda-netcat-nc-v-linux-s-primerami/
+            -> nc [options] host port
+
+    -> netstat
+        ( set statistics, open ports on local station )
+        https://putty.org.ru/articles/netstat-linux-examples.html
+
+    -> nslookup, dig
+        ( interaction with DNS servers )
+        https://blog.sedicomm.com/2019/11/26/kak-ustanovit-i-ispolzovat-komandy-dig-i-nslookup-v-linux/
+
+    -> nmap
+        ( scan ports )
+        https://blog.sedicomm.com/2019/03/26/32-primera-ispolzovaniya-komandy-nmap-dlya-linux-sistem/
+
+    -> tcpdump
+        ( listen net traffic )
+        https://blog.sedicomm.com/2017/05/30/tcpdump-poleznoe-rukovodstvo-s-primerami/
+
+    -> iptraf
+        ( multifunctional util for monitoring net traffic )
+        https://habr.com/ru/post/131504/
+
+    -> wireshark
+        ( analyze net protocols )
+        https://itproffi.ru/wireshark-v-linux-konsolnyj-analizator-setevogo-trafika-tshark/
+
+    -> telnet
+        https://losst.ru/kak-polzovatsya-telnet
+        -> telnet {ip} {port}
+            ( check remote host open port )
+
+    -> host
+        -> host { domain name }
+            ( return remote host ip by domain )
+
+-> how to set params:
+    -> changing host name:
+        -> hostname / cat /etc/hostname
+            ( check name )
+        -> vim etc/hostname
+            -> change in file host name
+        -> vim /etc/hosts
+            -> change line with name ps  in line 127.0... to new name
+                127.0.1.1 OldName to 127.0.1.1 NewName
+
+    -> changing ip to static:
+        -> ifconfig
+        -> for long time :
+            -> static settings:
+                -> vim /etc/network/interfaces
+                    -> in file add:
+                        -> auto { interface name }
+                        -> iface { interface name } inet static
+                        ->      adress { ip }
+                        ->      netmask { mask }
+                        ->      gateway { gw ip }
+                        ->      dns-nameservers { dns ip }
+
+        -> temporarily ip change:
+            -> sudo ifconfig { interface } { ip } netmask { mask }

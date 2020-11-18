@@ -1,0 +1,153 @@
+-> main files:
+    -> /etc/passwd
+        ( file with info about users and progg account )
+    -> /etc/shadow
+        ( file with passwords )
+    -> /etc/skel/
+        ( directory for make skelet for base folders for additing new user )
+
+-> base commands:
+    -> who
+        ( show ho is in system )
+    -> w
+        ( same as w but show more info )
+    -> last
+        ( show who and when was login to system )
+    -> whoami
+        ( show user under witch we work )
+    -> su { user name }
+        ( change user for work )
+    -> id { user name }
+        ( show all user access params )
+
+-> access types to file/directory:
+    -> base rights:
+        -> r
+            ( read/viewing entries )
+        -> w
+            ( write/(add or remove file/directory) )
+        -> x
+            ( execution/(access in or through directory) )
+    -> special rights:
+        -> SUID/SGID
+            -> 4/u (setuid) or 2/g (setgid)
+
+        -> Sticky bit
+            -> 1/t
+            -> {file type} {owner} | {group} | {other} | {sticky bit}
+                -> example: drwxrwxrwt
+
+    -> format access rights:
+        -> {file type} {owner} | {group} | {other} | {sticky bit}
+            -> -|rwx|rwx|rwx
+                -> example: drwxr-xr-x.
+        -> default rights:
+                r - 4
+                w - 2
+                x - 1
+                rwx = 7 ( 4 + 2 + 1 )
+            -> directory
+                777
+            -> file
+                666
+
+-> manage commands:
+    -> chown
+        ( set owner )
+        https://www.hostinger.ru/rukovodstva/komanda-chown-linux/
+        https://habr.com/ru/post/469667/
+
+    -> chgrp
+        ( set owners group )
+        https://andreyex.ru/linux/komandy-linux-i-komandy-shell/5-prakticheskie-primery-komandy-chgrp-v-linux/
+
+    -> chmod
+        ( set access rights )
+        https://younglinux.info/chmod
+        -> with numeric
+            -> chmod {0-7}{0-7}{0-7} {file/directory}
+        -> with letter
+        -> user
+            -> chmod :  { u {+/-/=} {r/w/x} } {file/directory}
+        -> group
+            -> chmod :  { g {+/-/=} {r/w/x} } {file/directory}
+        -> others
+            -> chmod :  { o {+/-/=} {r/w/x} } {file/directory}
+
+        -> Special bits:
+            -> set:
+                -> suid:
+                    -> chmod u{+/-}s {file}
+                -> sgit:
+                    -> chmod g{+/-}s {file}
+                -> sticky:
+                    -> chmod o{+/-}t {file}
+                -> suid & sgit
+                    -> chmod 6711 / chmod ug+s
+
+    -> umask
+        ( access rights mask )
+        https://handynotes.ru/2010/02/umask.html
+        -> pam_umask
+            -> grep UMASK /etc/login.defs.
+        -> defaut mask value: 022
+        -> to set used:
+            umask {value in range(000-777)}
+                -> algoritm:
+                    ( 777-value )
+                    -> exaple 754
+                        ( 777-754 = 023 -> (---|-w-|-wx)<=>(000|010|011))
+
+    -> set users to group:
+        -> groupadd { goup name }
+        -> adduser user_next { goup name }
+        https://www.networkworld.com/article/3409781/mastering-user-groups-on-linux.html
+        -> create user and include him to group example:
+            -> useradd -m -g cdrom -G audio,video -s /bin/bash user
+            -> passwrd user
+            -> groupadd { goup name }
+            -> adduser user_next { goup name }
+    -> del user from group:
+        -> deluser { user } { group }
+
+
+-> POSIX ACL
+    -> getfacl
+        ( show ACL )
+        -> -R
+            ( recursive viewing )
+
+    -> setfacl
+        ( set/del ACL )
+        -> -R
+            ( recursive viewing )
+        -> -m
+            ( changing or set ACl )
+        -> -x
+            ( remove ACL )
+
+        -> examples:
+            -> set r+w to user
+                -> setfacl -m u:user:rw {file}
+            -> set r to users group
+                -> setfacl -m g:users:r {file}
+            -> set mask to r+w mode:
+                -> setfacl -m m::rw {file}
+
+-> Profiles
+    -> catalogs:
+        -> /etc/profile
+            ( global profile settings )
+            ->
+                -> /etc/bash.bashrc
+                    ( global user settings )
+                -> /etc/bashrc
+
+            -> ( when user logging )
+                -> /etc/profile.d/
+                    ( glob user settings )
+                    -> ~/.bash_profile
+                    -> ~/.bash_login
+                    -> ~/.profile
+                        -> ~/.bashrc
+                            ( user settings )

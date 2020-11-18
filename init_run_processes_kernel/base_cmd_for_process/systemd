@@ -1,0 +1,25 @@
+-> systemctl
+    (show all processes unit)
+
+    -> systemctl --failed
+        (all units with failure start)
+
+    -> systemctl list-units --type=service
+        (all units with started services)
+
+    -> systemctl status {service}
+        (output status of service)
+            -> systemctl status
+
+    ->  systemctl {start/stop} {service}
+        (stop or start service)
+
+    ->  systemctl list-units --type=target
+        (saw all run targets)
+
+    ->  systemctl isolate {target name}
+        (switch on other)
+            -> systemctl isolate rescue.target
+
+    ->  systemctl set-default -f {target name}
+        (set as default)

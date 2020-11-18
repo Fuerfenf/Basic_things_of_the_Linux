@@ -1,0 +1,15 @@
+-> show process tree
+    -> pstree
+        (base process init/systemd https://www.tecmint.com/systemd-replaces-init-in-linux/)
+
+-> stop/run process
+    -> /etc/init.d/{service name} stop/start
+        or
+    -> service {service name} restart/stop/start
+
+
+-> type scripts:
+    -> start with K...
+        (kill process)
+    -> start with S...
+        (start process)

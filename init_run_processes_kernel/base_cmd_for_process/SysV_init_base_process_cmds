@@ -1,0 +1,16 @@
+-> init
+    (control initialisation)
+    -> init {run level}
+-> Telinit
+    (control process init)
+    -> telinit {run level]
+-> Wall
+    (output massage)
+-> Halt
+    (PC shutdown)
+-> Reboot
+    (computer reboot)
+-> Shutdown
+    (planned shutdown)
+    -> shotdown -h {time/now}
+-> Service {service name} start/stop/reload/restart

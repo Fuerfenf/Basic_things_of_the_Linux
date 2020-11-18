@@ -1,0 +1,26 @@
+-> stdin (0)
+    (inout)
+-> stdout (1)
+    (output)
+-> stderr (2)
+    (error output)
+
+-> >
+    ( send to )
+-> >>
+    ( add to )
+-> <
+    ( fet from )
+-> |
+    ( pipe )
+-> 2>
+    ( bad result send to )
+-> 2>>
+    ( bad result add to )
+-> &>
+    ( all results send to )
+
+-> Tee
+    ( send to file and output )
+-> Xargs
+    ( line send to other command iput )

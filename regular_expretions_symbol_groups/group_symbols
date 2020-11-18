@@ -1,0 +1,14 @@
+-> *
+    ( anything )
+
+-> ?
+    ( anyone symbol )
+
+-> !
+    ( not )
+
+-> [] range symbols:
+    -> [ac]
+        ( a or c )
+    -> [a-c]
+        ( a, b, c)

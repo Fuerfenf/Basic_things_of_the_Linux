@@ -1,0 +1,10 @@
+-> journalctl -f
+    ( show all events in run )
+
+-> journalctl -n {number}
+    ( show only in range number events in run )
+
+-> journalctl _UID={id}
+    ( show event by id )
+
+

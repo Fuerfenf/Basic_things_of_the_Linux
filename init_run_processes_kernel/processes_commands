@@ -1,0 +1,71 @@
+ -> cmnds
+    -> fg
+        ( foreground )
+    -> bg
+        ( background ) or ctr+z
+
+    -> jobs
+        ( show list pause and running programs in background)
+
+    -> nohup
+        ( no hand up )
+        -> nohup {command} &
+        https://andreyex.ru/operacionnaya-sistema-linux/komanda-nohup-v-linux-pozvolyaet-zapuskat-komandy-dazhe-posle-vyhoda-iz-sistemy/
+        https://www.computerhope.com/unix/unohup.htm
+
+    -> ps
+        ( info about active processes )
+        -> keys:
+            -> -a
+                ( show all process )
+            -> -x
+                ( show unbounded terminal process )
+            -> -e
+                ( show all system process )
+            -> -f
+                ( show process tree )
+            -> -u
+                ( show user process )
+
+    -> pstree
+        ( process tree )
+        http://linux.yaroslavl.ru/docs/setup/mandrake/cl/process-info.html
+
+    -> pgrep
+        ( find process )
+
+    -> pkill
+        ( kill process )
+
+     -> killall
+
+    -> top
+        ( task manager )
+
+    -> free
+        ( operative load )
+
+    -> uptime
+        ( working time )
+
+    -> screen
+        ( manage sessions )
+
+-> daemons
+    -> config files for services: /etc/event.d
+    -> all scripts in: /etc/init.d
+        -> start functions: /lib/lsb/init-functions
+    -> symbol links on scripts: /etc/rcX.d (X - run level)
+
+-> run tasks on a schedule:
+    -> cron
+        -> global conf: /etc/crontab
+            -> set example:
+               https://1cloud.ru/help/linux/kak-nastroit-planirovshchik-cron-na-crontab-linux
+        -> user conf: /var/spool/cron/*
+
+    -> anacron
+        https://blog.sedicomm.com/2020/04/11/cron-ili-anacron-kak-planirovat-vypolnenie-zadach-s-pomoshhyu-anacron-v-linux/
+        -> etc/anacrontab
+
+    -> at

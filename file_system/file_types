@@ -1,0 +1,14 @@
+-> f or -
+    ( usual file )
+-> l
+    ( symbol link )
+-> d
+    ( directory )
+-> c
+    ( symbol device )
+-> b
+    ( block device )
+-> p
+    ( pipe (FIFO) file )
+-> s
+    ( socket type file )

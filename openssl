@@ -1,0 +1,7 @@
+-> openssh
+    -> create key
+    https://firstvds.ru/technology/dobavit-ssh-klyuch
+        -> ssh-keygen
+
+        -> then grep public part and then connected to remoute host
+        -> create in catalog .ssh file for save public part

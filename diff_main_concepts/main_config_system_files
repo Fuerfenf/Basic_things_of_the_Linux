@@ -1,0 +1,14 @@
+-> /etc/fstab
+    ( settings file sistems for pluggable devices )
+-> /etc/mtab
+    ( mounted devices )
+-> /etc/ld.so.conf
+    ( path to system libs )
+-> /etc/hosts
+    ( network settings )
+-> /etc/resolve.conf
+    ( DNS settings )
+-> /etc/host.conf or /etc/nsswitch.conf
+    ( set determination procedure ip by domain names )
+-> /etc/syslog.conf
+    ( settings for logging journal )

@@ -1,0 +1,2 @@
+BIOS/UEFI -> MBR/GPT -> LILO/GRUB -> Linux Kernel -> init
+

@@ -1,0 +1,28 @@
+-> remote connect:
+    -> ssh:
+        -> install this service
+        -> service ssh status
+            ( check ssh service active )
+        -> service ssh start
+            ( start this service )
+        -> for connect to remote:
+            ssh { user name }@{ ip remote host }
+
+-> file transfer:
+    -> ftp:
+        -> install ftp
+        -> ftp { remote ip or domain name }
+            ( open ftp connection to remote system )
+
+        -> get or push:
+            -> get from remote:
+                -> get { file }
+                    ( one file )
+                -> -> mget { file1 } ... {fileN}
+                    ( several files )
+
+            -> push files to remote:
+                -> put { file }
+                    ( one file )
+                -> mput { file1 } ... {fileN}
+                    ( several files )

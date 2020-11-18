@@ -1,0 +1,25 @@
+-> output devise:
+    -> Lsmod
+        - (ifo about kernel modules)
+    -> Lspci
+        - (info about PCI devices)
+    -> Lspcmcia
+        - (info about PCMCIA devices)
+    -> Lsusb
+        - (info about USB bus)
+    -> Lshal
+        - (HAL devices base) delete in new linux's
+    -> Lshw
+        - (detail info about parts)
+
+-> utils for kernel modules control:
+    -> Lsmod
+        - (ifo about kernel modules)
+    -> Modinfo {module name}
+        - (module info)
+    -> Rmmod {module name}
+        - (delete kernel module)
+    -> insmod {module name}
+        - (install kernel module)
+    -> Modprobe {module name}
+        - (delicate delete or add modules)

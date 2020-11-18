@@ -1,0 +1,7 @@
+-> Priority level in range -20 to +19
+    if bigger level then later it run
+
+-> ps
+    -> ps alx
+        ( output in process table with row NI (nice - priority) )
+        https://www.tecmint.com/set-linux-process-priority-using-nice-and-renice-commands/

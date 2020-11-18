@@ -1,0 +1,14 @@
+-> the Bourne shell
+    -> /bin/sh
+
+-> the Bourne again shell
+    -> /bin/bash
+
+-> the Korn shell
+    -> /bin/ksh
+
+-> the C shell
+    -> /bin/csh
+
+-> Tom's C shell
+    -> /bin/tcsh

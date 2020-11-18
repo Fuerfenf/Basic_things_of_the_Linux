@@ -1,0 +1,31 @@
+-> man [ options ] [ paragraph ] manpage
+    ( manual )
+    -> /usr/share/man
+        ( path to man files )
+    -> man pages:
+        -> 1
+            ( Applications and shell commands )
+        -> 2
+            ( Kernel system calls (C functions) )
+        -> 3
+            ( Library calls (functions of various libraries installed on the system) )
+        -> 4
+            ( Special files (usually found in the / dev directory) )
+        -> 5
+            ( File formats and conventions )
+        -> 6
+            ( Games )
+        -> 7
+            ( Various descriptions, conventions, etc. )
+        -> 8
+            ( System administration commands that are usually run as superuser )
+        -> 9
+            ( Operating system kernel (non-standard partition) )
+    -> commands:
+        -> whatis {util name}
+            ( short man description about util )
+        -> for short info about util used:
+            -> {util} --help
+        -> man {page} {util name}
+            ( open man file /etc/{util name} )
+

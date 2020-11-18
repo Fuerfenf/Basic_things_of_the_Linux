@@ -1,0 +1,18 @@
+-> dpkg
+    (util for packages)
+    https://linux-notes.org/komanda-dpkg-v-primerah/
+
+   -> I
+        (package list in system)
+   -> L
+        (file list in packages)
+   -> s
+        (package status info)
+   -> S
+        (package search, witch contented this file)
+   -> i
+        (install package)
+   -> r
+        (lite package delete)
+   -> P
+        (delete package with configure files)

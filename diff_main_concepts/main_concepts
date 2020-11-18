@@ -1,0 +1,17 @@
+-> CPU
+    -> IRQ
+        - (interrupt mechanism)
+    -> IO addresses
+        - (exchange info between devices and CPU)
+    -> DMA
+        - (appeal to RAM without CPU)
+
+-> saving devises
+    -> interfaces:
+        -> PATA
+            - parallel interface
+        -> SATA
+            - consistent interface
+        -> SCSI
+        -> SAS
+            - (replace SCSI)

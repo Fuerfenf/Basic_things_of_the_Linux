@@ -1,0 +1,75 @@
+-> cat
+    ( output file content to console )
+    https://itproffi.ru/komanda-cat-v-linux/
+
+-> cut
+    ( remove sections from file parts )
+    https://blog.sedicomm.com/2018/03/15/10-primerov-komandy-cut-v-unix-i-linux/
+    https://losst.ru/komanda-cut-linux
+
+-> expand
+    ( change tabs to spaces )
+    https://linux-faq.ru/page/komanda-expand
+
+-> fmt
+    ( text formatter )
+    https://www.geeksforgeeks.org/fmt-command-unixlinux/
+
+-> head
+    ( output N lines from start of file )
+    https://linux-notes.org/utilita-head-v-primerah-unix-linux/
+
+-> join
+    ( join files by field )
+    https://shapeshed.com/unix-join/
+
+-> less
+    ( read file )
+    https://andreyex.ru/linux/komandy-linux-i-komandy-shell/9-prostyh-sposobov-effektivnogo-ispolzovaniya-komandy-less-v-linux/
+
+-> nl
+    ( numerate lines in file )
+
+-> od
+    ( used to convert the content of input in different formats with octal format as the default format )
+    https://www.geeksforgeeks.org/od-command-linux-example/
+
+-> paste
+    ( merge lines of files )
+    https://andreyex.ru/linux/komandy-linux-i-komandy-shell/7-prakticheskih-primerov-ispolzovaniya-komandy-paste-v-linux/
+
+-> pr
+    ( convert file lines as for printing)
+
+-> sed
+    ( stream out editor for filtering and transforming text )
+    https://habr.com/ru/company/ruvds/blog/327530/
+
+-> sort
+    ( sort lines from file )
+    https://itproffi.ru/komanda-sort-v-linux/
+
+-> split
+    ( splited files )
+    https://andreyex.ru/linux/komandy-linux-i-komandy-shell/9-poleznyh-primerov-komandy-split-v-linux/
+
+-> tail
+    ( same as cat but output last part of file )
+    https://losst.ru/komanda-tail-linux
+
+-> tr
+    (  translates and/or deletes characters )
+    https://www.tecmint.com/tr-command-examples-in-linux/
+
+-> unexpand
+    ( change spaces and tabs into tabs )
+    https://www.geeksforgeeks.org/unexpand-command-in-linux-with-examples/
+
+-> uniq
+    ( uniq or double lines )
+    https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/
+
+-> wc
+    ( print lines, symbols and other parts of file data in file )
+    https://www.geeksforgeeks.org/wc-command-linux-examples/
+

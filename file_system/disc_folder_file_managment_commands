@@ -1,0 +1,225 @@
+-> files, folders:
+    -> cd
+        ( change catalog )
+
+    -> cp
+        ( copy )
+        https://www.rapidtables.com/code/linux/cp.html
+
+    -> mv
+        ( moves and renames files and directories )
+        https://www.computerhope.com/unix/umv.htm
+
+    -> ls
+        ( show contain )
+        https://www.tecmint.com/15-basic-ls-command-examples-in-linux/
+        https://losst.ru/komanda-ls-linux
+
+    -> ln
+        ( create link to file (hard & soft) )
+
+    -> cat
+        ( output file content to console )
+        -> cat /etc/passwd  ( show users and used shell )
+            https://itproffi.ru/komanda-cat-v-linux/
+
+    -> dd
+        ( byte copy )
+        https://losst.ru/komanda-dd-linux
+
+    -> whatis
+        ( reference by name )
+
+    -> find
+        (find any file or directory)
+        https://www.tecmint.com/35-practical-examples-of-linux-find-command/
+
+    -> mkdir
+        ( make folder )
+        https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/
+
+    -> rm
+        ( remove )
+        https://www.geeksforgeeks.org/rm-command-linux-examples/
+
+    -> rmdir
+        ( remove folder )
+        https://www.geeksforgeeks.org/rmdir-command-in-linux-with-examples/
+
+    -> touch
+        ( update time file editing )
+        https://andreyex.ru/operacionnaya-sistema-linux/9-poleznyh-primerov-komandy-touch-v-linux/
+
+    -> file
+        ( determine the type of a file )
+        https://www.geeksforgeeks.org/file-command-in-linux-with-examples/
+        https://andreyex.ru/operacionnaya-sistema-linux/komanda-file-v-linux/
+
+    -> echo
+          ( input text in console )
+           https://andreyex.ru/operacionnaya-sistema-linux/komanda-echo-v-linux-s-primerami/
+            -> echo {data} > {needed file}
+                (send in to file some data)
+
+     -> wc
+        ( file info lines, words, size )
+
+    -> more/less
+        ( page file listing )
+
+    -> whitch
+        ( find file in directory used PATH )
+        -> -a
+            ( all found files )
+
+    -> grep
+        ( grep info by pattern )
+        https://wiki.merionet.ru/servernye-resheniya/39/rukovodstvo-po-komande-grep-v-linux/
+        -> grep { pattern } 2> {file name}
+            ( write to file bad results with mistakes )
+        -> grep { pattern } > { file name }
+            ( write to file good results )
+        -> grep { pattern } > { file name }
+            ( write to file all results )
+
+-> archives:
+    -> tar
+        ( best archiver )
+        https://blog.sedicomm.com/2018/10/10/18-primerov-komand-tar-v-linux/
+
+    -> cpio
+        https://www.thegeekstuff.com/2010/08/cpio-utility/
+
+    -> gzip
+        ( compress to archive and delete origin file )
+        https://www.lifewire.com/example-uses-of-the-linux-gzip-command-4078675
+
+    -> gunzip
+        ( compress to archive and delete origin file )
+        https://www.tutorialspoint.com/unix_commands/gunzip.htm
+
+    -> bzip2
+        ( compress to archive and delete origin file )
+        https://www.geeksforgeeks.org/bzip2-command-in-linux-with-examples/
+
+    -> xz
+        https://www.rootusers.com/13-simple-xz-examples/
+
+-> disc/file system control:
+    -> commands:
+        -> df
+            ( disk space status )
+            https://losst.ru/komanda-df-linux
+            -> df -i
+            -> df -h
+
+        -> free
+            (show info about memory)
+
+        -> lsblk
+            ( show disk )
+
+        -> du
+            ( disk using space )
+            -> df -h
+            https://zalinux.ru/?p=890
+
+        -> fsck
+            ( checked and repair disc space )
+            https://linux-notes.org/proverka-fajlovoj-sistemy-na-oshibki-s-pomoshh-yu-fsck-na-linux/
+
+        -> debugfs
+            http://blog.unixstyle.ru/218/debugfs-prakticheskoe-rukovodstvo/
+
+        -> link about debugging file system
+            http://rus-linux.net/MyLDP/file-sys/4-tools-for-filesystem-health.html
+
+        -> blkid
+            (show all mounted devices and where are they)
+
+        -> fdisk
+            (util for splitting HDD)
+            http://linux-bash.ru/menudisk/41-fdisk.html
+            -> fdisk -l
+                (show all connected devices)
+
+        -> mkfs
+            (util for creating file system)
+            https://andreyex.ru/linux/ispolzovanie-komandy-mkfs-v-linux-dlya-formatirovaniya-fajlovoj-sistemy-na-diske-ili-razdele/
+
+        -> mount/umount
+            https://itshaman.ru/articles/3/mount
+            http://rus-linux.net/MyLDP/BOOKS/MDK-10/fs-and-mntpoints-mount.html
+                -> catalog for auto mounting
+                    -> /etc/fstab
+
+        -> pvdisplay
+            (show physical volumes (toms))
+
+        -> sudo vgdisplay
+            (show volume groups)
+
+        -> pvcreate {/dev/tom}
+            (create physical tom showed in pvdisplay)
+
+        -> vgcreate {vg name} {/dev/tom1} ... {/dev/tomN}
+            (create volume group)
+
+        -> lvcreate -{key} {lv name} -L {size} {vg name}
+            (create logocal volume)
+
+        -> lvresize -L {size} {vg group} {tom}
+            (change tom size)
+
+        -> cat /etc/fstab
+            (show file system information)
+
+        -> dd if={impute file: /dev/tom} of={output file: path/{name}.mbr} bs={block size: base 512} count={number}
+            (reserv copy by sectors)
+            https://habr.com/ru/post/117050/
+
+         -> disk quota
+            https://www.dmosk.ru/miniinstruktions.php?mini=quota-linux\
+            -> /etc/fstab
+                ( file to set quota options )
+
+    -> how add disk:
+        -> lsblk / fdisk -l
+            ( show disks )
+        ->  fisk / cfdisk { disk device }
+            ( for formate )
+        -> lsblk / fdisk -l
+            ( for checking added disk )
+        -> mkfs.ntfs -f { disk device }
+            ( format disk file system for view it in explorer and start worked with him )
+        -> for automatic mounting disk
+            ->mkdir /media/{ disk name }
+                ( create folder for mounting )
+                -> mkdir /media/hdd1
+            -> vim /etc/fstab
+                -> add to file: /dev/{ devise } /media/{ mounting folder } { media type: ntfs/ext... } default 0 0
+                    ( add to file line for mounting devise )
+                    -> /dev/sdb1 /media/hdd2 ntfs default 0 0
+            -> mount /media/{ disk folder }
+                -> mount /media/hdd2
+            -> create link to disk on desktop
+                -> ln -s /media/{ disk folder } ~/Desktop/{ link name }
+                    -> ln -s /media/hdd2 ~/Desktop/HDD2
+
+
+-> other commands:
+    -> history
+        ( output command history list )
+
+    -> env
+        ( output environment variables )
+
+    -> pwd
+        ( current catalog )
+
+    -> export
+        ( set variable )
+
+    -> unset
+        ( shutdown variable )
+

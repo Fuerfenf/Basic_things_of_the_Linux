@@ -1,0 +1,18 @@
+-> Service:
+    (can reload if process crashed)
+
+-> Task:
+    (can't reloaded)
+
+-> Catalog:
+    -> /etc/init
+        (file-tasks(job) catalog)
+        -> ubuntu file: rc-sysinit.conf
+        -> centos file: /etc/inittab
+
+-> Utils:
+    -> Ubuntu:
+        -> initctl
+            (util control upstart)
+
+https://proft.me/2011/01/3/urovni-inicializacii-v-ubuntu-i-centos/

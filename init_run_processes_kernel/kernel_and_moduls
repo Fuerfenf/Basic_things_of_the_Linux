@@ -1,0 +1,21 @@
+-> lsmod
+    ( list of loaded kernel modules )
+
+-> modprobe
+    ( util for manage modules )
+    -> modprobe -l
+        ( all available kernel modules)
+
+    -> modprobe { module name }
+        ( download kernel module )
+
+    -> modprobe -r { module name }
+        ( unload kernel module )
+
+    -> modinfo { module name }
+        ( module info )
+
+    -> path to kernel module example:
+        -> /lib/modules/$(uname -r)
+        -> modules for set them in system load:
+            -> /etc/modules
